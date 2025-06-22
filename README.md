@@ -40,6 +40,7 @@ By default, only selected emails are treated as admins.
 ```
 
 http://localhost:3000/dashboard?demo=true
+http://localhost:3000/dashboard/payout?demo=true     // to view admin only payout page 
 
 ````
 
