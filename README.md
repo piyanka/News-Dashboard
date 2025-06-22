@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📰 News & Blog Dashboard
 
-## Getting Started
+A full-stack admin dashboard built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**, allowing you to fetch, filter, analyze, and export news and blog data.
 
-First, run the development server:
+![image](https://github.com/user-attachments/assets/e45fbb50-1576-4ce5-8eac-378b8857ff39)
+
+
+## ✨ Features
+
+- OAuth login via Google
+- Admin vs non-admin role-based access
+- Fetches articles from:
+  - [NewsAPI](https://newsapi.org/)
+  - [Dev.to API](https://dev.to/api/)
+- Filters by author, date range, and type
+- Dynamic analytics charts (Bar + Pie)
+- Admin-only payout view with custom rates
+- Export reports as:
+  - PDF
+  - CSV
+  - Google Sheets
+
+## 🚀 Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Chart.js + react-chartjs-2
+- NextAuth.js (Google OAuth)
+- NewsAPI + Dev.to API
+
+## 🔐 Admin Access
+
+By default, only selected emails are treated as admins.
+
+### 🧪 Test Admin Mode (no login required):
+
+> For demo/evaluation purposes:
+
+```
+
+[https://your-deployment-url.vercel.app/dashboard?demo=true](https://your-deployment-url.vercel.app/dashboard?demo=true)
+
+````
+
+✅ This enables admin access without an actual admin email.
+
+---
+
+## 🛠️ Local Setup
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+````
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Create `.env.local`**
+
+```env
+GOOGLE_CLIENT_ID=your_client_id
+GOOGLE_CLIENT_SECRET=your_secret
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+NEWS_API_KEY=your_newsapi_key
+```
+
+4. **Run the app**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure
 
-## Learn More
+```
+/app
+  /dashboard
+    page.tsx             → Main dashboard with auth + exports
+  /api/news              → Fetch & enrich news + blog articles
 
-To learn more about Next.js, take a look at the following resources:
+/src
+  /components            → Reusable UI components
+  /hooks/useIsAdmin.ts   → Admin access logic
+  /utils/exportUtils.ts  → Export logic for PDF, CSV, Google Sheets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Export Options
 
-## Deploy on Vercel
+* 📄 Export as PDF
+* 📁 Export as CSV
+* 📊 Export to Google Sheets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Click the "📤 Export Payout Report" button on the dashboard.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📸 Screenshots
+
+> *(Add if time permits, or skip this section for now)*
+
+---
+
+## 🔐 Admin Email List
+
+```ts
+const ADMINS = [
+  "yadavpriyanka97181019@gmail.com",
+  "admin@example.com"
+];
+```
+
+You can modify this in: `src/hooks/useIsAdmin.ts`
+
+---
+
+## 📜 License
+
+MIT – Free to use, modify, and share.
+
+---
+
+Let me know if you want it pasted into a file (`README.md`) or need links added.
