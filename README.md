@@ -39,7 +39,7 @@ By default, only selected emails are treated as admins.
 
 ```
 
-[https://your-deployment-url.vercel.app/dashboard?demo=true](https://your-deployment-url.vercel.app/dashboard?demo=true)
+http://localhost:3000/dashboard?demo=true
 
 ````
 
@@ -108,12 +108,6 @@ Click the "📤 Export Payout Report" button on the dashboard.
 
 ---
 
-## 📸 Screenshots
-
-> *(Add if time permits, or skip this section for now)*
-
----
-
 ## 🔐 Admin Email List
 
 ```ts
@@ -126,11 +120,3 @@ const ADMINS = [
 You can modify this in: `src/hooks/useIsAdmin.ts`
 
 ---
-
-## 📜 License
-
-MIT – Free to use, modify, and share.
-
----
-
-Let me know if you want it pasted into a file (`README.md`) or need links added.
