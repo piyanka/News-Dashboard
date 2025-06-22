@@ -52,7 +52,7 @@ http://localhost:3000/dashboard?demo=true
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/piyanka/News-Dashboard.git
 cd your-repo-name
 ````
 
